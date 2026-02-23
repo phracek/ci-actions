@@ -45,19 +45,10 @@ jobs:
             # in order to run only available tests
             jq -nc "$cases"' - ('"$cases"' - ${{ inputs.enabled-tests }})' >> "$GITHUB_OUTPUT"
           fi
-          if ${{ (contains(github.event.comment.body, '[test-openshift]') 
-              || contains(github.event.comment.body, '[test-openshift-pytest]') 
+          if ${{ (contains(github.event.comment.body, '[test-openshift-pytest]') 
               || contains(github.event.comment.body, '[test-all]'))
               && contains(inputs.enabled-tests, 'openshift') }}; then
-            if ${{ !contains(github.event.comment.body, '[test-openshift]')
-                && !contains(github.event.comment.body, '[test-all]')}}; then
-              ocp_cases='["openshift-pytest"]'
-            elif ${{ !contains(github.event.comment.body, '[test-openshift-pytest]')
-                  && !contains(github.event.comment.body, '[test-all]')}}; then
-              ocp_cases='["openshift-4"]'
-            else
-              ocp_cases='["openshift-4","openshift-pytest"]'
-            fi
+            ocp_cases='["openshift-pytest"]'
             # equivalent of $ocp_cases intersection with enabled-tests
             # in order to run only available tests
             echo -n "ocp_cases=" >> "$GITHUB_OUTPUT"
