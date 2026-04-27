@@ -9,7 +9,6 @@ jobs:
       github.event.issue.pull_request
       && (contains(github.event.comment.body, '[test]')
       || contains(github.event.comment.body, '[test-pytest]')
-      || contains(github.event.comment.body, '[test-openshift]')
       || contains(github.event.comment.body, '[test-openshift-pytest]')
       || contains(github.event.comment.body, '[test-upstream]')
       || contains(github.event.comment.body, '[test-all]')

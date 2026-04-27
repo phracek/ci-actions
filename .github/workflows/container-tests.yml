@@ -90,7 +90,7 @@ jobs:
     uses: ./.github/workflows/run-tests.yml
     with:
       version: ${{ inputs.versions }}
-      os_test: '[ "fedora", "rhel8", "rhel9", "rhel10", "rhel9-unsubscribed", "rhel10-unsubscribed", "c9s", "c10s" ]'
+      os_test: '[ "fedora", "rhel8", "rhel9", "rhel10", "rhel11", "rhel9-unsubscribed", "rhel10-unsubscribed", "rhel11-unsubscribed", "c9s", "c10s", "c11s" ]'
       test_case: ${{ needs.get_test_cases.outputs.cases }}
       exclude_matrix: ${{ needs.get_test_cases.outputs.exclude_matrix }}
     secrets: inherit
@@ -113,7 +113,7 @@ jobs:
     uses: ./.github/workflows/run-tests.yml
     with:
       version: ${{ inputs.openshift-versions }}
-      os_test: '[ "rhel8", "rhel9", "rhel10" ]'
+      os_test: '[ "rhel8", "rhel9", "rhel10", "rhel11" ]'
       test_case: ${{ needs.get_test_cases.outputs.ocp_cases }}
       exclude_matrix: ${{ needs.get_test_cases.outputs.exclude_matrix }}
     secrets: inherit
@@ -124,7 +124,7 @@ jobs:
     uses: ./.github/workflows/run-tests.yml
     with:
       version: ${{ inputs.versions }}
-      os_test: '[ "rhel9", "rhel10" ]'
+      os_test: '[ "rhel9", "rhel10", "rhel11" ]'
       test_case: ${{ needs.get_test_cases.outputs.fips_cases }}
       exclude_matrix: ${{ needs.get_test_cases.outputs.exclude_matrix }}
     secrets: inherit
