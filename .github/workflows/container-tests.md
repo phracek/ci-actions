@@ -7,7 +7,7 @@ and FIPS tests if available.
 
 | Input                | Explanation                                             | Required | Value                                                                                    | Example                                                                         |
 |----------------------|---------------------------------------------------------|----------|------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| `enabled-tests`      | Tests to run on the defined versions                    | yes      | list of double-quoted strings inside of single quotes                                    | `'["container","container-pytest","openshift-pytest"]'` to disable Openshift pytests |
+| `enabled-tests`      | Tests to run on the defined versions                    | yes      | list of double-quoted strings inside of single quotes                                    | `'["container","container-pytest"]'` to disable Openshift pytests |
 | `versions`           | Versions of the container to run container (py)tests on | yes      | list of double-quoted strings inside of single quotes                                    | `'["2.4", "2.4-micro"]'` for httpd                                              |
 | `openshift-versions` | Versions of the container run Openshift (py)tests on    | no       | list of double-quoted strings inside of single quotes, no input disables Openshift tests | `'["2.4"]'` for httpd                                                           |
 
